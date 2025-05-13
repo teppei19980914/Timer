@@ -78,10 +78,37 @@ public class TimerApp extends JFrame {
             }
         });
 
-                // --- 標準ボタン(50分) ---
+        // --- 標準ボタン(50分) ---
         fiftyMinuteButton.addActionListener(e -> {
             if (!timer.isRunning()) {
                 remainingSeconds = 3000;
+                updateLabel();
+                timer.start();
+            }
+        });
+
+        // --- 標準ボタン(1時間) ---
+        oneHourButton.addActionListener(e -> {
+            if (!timer.isRunning()) {
+                remainingSeconds = 3600;
+                updateLabel();
+                timer.start();
+            }
+        });
+
+        // --- 標準ボタン(4時間) ---
+        fourHourButton.addActionListener(e -> {
+            if (!timer.isRunning()) {
+                remainingSeconds = 3600 * 4;
+                updateLabel();
+                timer.start();
+            }
+        });
+
+        // --- 標準ボタン(9時間) ---
+        nineHourButton.addActionListener(e -> {
+            if (!timer.isRunning()) {
+                remainingSeconds = 3600 * 9;
                 updateLabel();
                 timer.start();
             }
